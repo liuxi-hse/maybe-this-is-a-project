@@ -123,7 +123,7 @@ def main(url):
         soup = BeautifulSoup(content, features='html.parser')
         data = get_reviews_from_YandexMaps(bs4_soup=soup)
 
-        output_file = f"Замок Храповицкого_reviews.xlsx"
+        output_file = f"reviews.xlsx"
         output_path = os.path.join("output", output_file)
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         data.to_excel(output_path, index=False)
@@ -136,6 +136,6 @@ def main(url):
         browser.quit()
 
 if __name__ == '__main__':
-    # 直接指定要抓取的URL
-    url = 'https://yandex.ru/maps/org/zamok_khrapovitskogo/172986603490/reviews/?ll=40.904162%2C55.930347&z=16'
+    # Directly specify the URL to scrape
+    url = ''
     main(url)
